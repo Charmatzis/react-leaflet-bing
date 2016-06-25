@@ -2,7 +2,7 @@
 Bing layer as React component for Leaflet  build on top of [React-Leaflet](https://github.com/PaulLeCam/react-leaflet).
 
 
- # Getting started
+# Getting started
 
 ```
 import { Map,  TileLayer, LayersControl } from 'react-leaflet'
