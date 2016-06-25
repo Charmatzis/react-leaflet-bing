@@ -5,8 +5,9 @@ Bing layer as React component for Leaflet  build on top of [React-Leaflet](https
  ## Getting started
 
 ```
-import { Map, Circle, TileLayer, LayersControl } from 'react-leaflet'
+import { Map,  TileLayer, LayersControl } from 'react-leaflet'
 import {BingLayer} from '../src'
+const { BaseLayer } = LayersControl;
 
 ...
 const bing_key = "YOUR-BING-KEY"
