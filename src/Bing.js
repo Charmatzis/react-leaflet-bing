@@ -13,8 +13,4 @@ export default class BingLayer extends BaseTileLayer {
     const {map: _map, layerContainer: _lc, bingkey, ...props, } = this.props;
     this.leafletElement = L.bingLayer(bingkey, props); 
   }
- 
-   componentDidUpdate(prevProps) {
-     this.setStyleIfChanged(prevProps, this.props);
-  }
 }
