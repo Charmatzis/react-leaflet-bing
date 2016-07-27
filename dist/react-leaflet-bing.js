@@ -91,8 +91,6 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _leaflet = __webpack_require__(4);
 
-	var _leaflet2 = _interopRequireDefault(_leaflet);
-
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
@@ -117,26 +115,21 @@ return /******/ (function(modules) { // webpackBootstrap
 	    value: function componentWillMount() {
 	      _get(Object.getPrototypeOf(BingLayer.prototype), 'componentWillMount', this).call(this);
 	      var _props = this.props;
-	      var key = _props.key;
 	      var _map = _props.map;
 	      var _lc = _props.layerContainer;
+	      var bingkey = _props.bingkey;
 
-	      var props = _objectWithoutProperties(_props, ['key', 'map', 'layerContainer']);
+	      var props = _objectWithoutProperties(_props, ['map', 'layerContainer', 'bingkey']);
 
-	      this.leafletElement = L.BingLayer(key, props);
-	    }
-	  }, {
-	    key: 'componentDidUpdate',
-	    value: function componentDidUpdate(prevProps) {
-	      this.setStyleIfChanged(prevProps, this.props);
+	      this.leafletElement = L.bingLayer(bingkey, props);
 	    }
 	  }]);
 
 	  return BingLayer;
-	}(BaseTileLayer);
+	}(_reactLeaflet.BaseTileLayer);
 
 	BingLayer.propTypes = {
-	  key: _react.PropTypes.object.isRequired
+	  bingkey: _react.PropTypes.string.isRequired
 	};
 	exports.default = BingLayer;
 
@@ -166,10 +159,10 @@ return /******/ (function(modules) { // webpackBootstrap
 			culture: ''
 		},
 
-		initialize: function initialize(key, options) {
+		initialize: function initialize(bing_key, options) {
 			L.Util.setOptions(this, options);
 
-			this._key = key;
+			this._bing_key = bing_key;
 			this._url = null;
 			this._providers = [];
 			this.metaRequested = false;
@@ -204,13 +197,13 @@ return /******/ (function(modules) { // webpackBootstrap
 				var e = document.getElementById(cbid);
 				e.parentNode.removeChild(e);
 				if (meta.errorDetails) {
-					throw new Error(meta.errorDetails);
+					console.log(meta.errorDetails);
 					return;
 				}
 				_this.initMetadata(meta);
 			};
 			var urlScheme = document.location.protocol === 'file:' ? 'http' : document.location.protocol.slice(0, -1);
-			var url = urlScheme + '://dev.virtualearth.net/REST/v1/Imagery/Metadata/' + this.options.type + '?include=ImageryProviders&jsonp=' + cbid + '&key=' + this._key + '&UriScheme=' + urlScheme;
+			var url = urlScheme + '://dev.virtualearth.net/REST/v1/Imagery/Metadata/' + this.options.type + '?include=ImageryProviders&jsonp=' + cbid + '&key=' + this._bing_key + '&UriScheme=' + urlScheme;
 			var script = document.createElement('script');
 			script.type = 'text/javascript';
 			script.src = url;
@@ -276,8 +269,8 @@ return /******/ (function(modules) { // webpackBootstrap
 		}
 	});
 
-	L.bingLayer = function (key, options) {
-		return new L.BingLayer(key, options);
+	L.bingLayer = function (bing_key, options) {
+		return new L.BingLayer(bing_key, options);
 	};
 
 /***/ }
