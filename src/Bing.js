@@ -1,9 +1,9 @@
 import React, {PropTypes}  from 'react';
-import {BaseTileLayer} from 'react-leaflet';
+import {TileLayer} from 'react-leaflet';
 import {bingLayer} from './leaflet.bing';
 
 
-export default class BingLayer extends BaseTileLayer {
+export default class BingLayer extends TileLayer {
   static propTypes = {
     bingkey: PropTypes.string.isRequired
   };
