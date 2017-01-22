@@ -1,6 +1,8 @@
 # react-leaflet-bing
 Bing layer as React component for Leaflet  build on top of [React-Leaflet](https://github.com/PaulLeCam/react-leaflet).
 
+![Bing example](images/example.gif)
+
 
 # Getting started
 
