@@ -1,4 +1,4 @@
-# react-leaflet-bing
+# react-leaflet-bing [![npm version](https://img.shields.io/badge/npm-2.0.0-blue.svg)](https://www.npmjs.com/package/react-leaflet-bing)
 Bing layer as React component for Leaflet  build on top of [React-Leaflet](https://github.com/PaulLeCam/react-leaflet).
 
 ![Bing example](images/example.gif)
