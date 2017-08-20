@@ -49,6 +49,7 @@
     "eslint-plugin-react": "^6.4.1",
     "leaflet": "^1.0.2",
     "lodash.isequal": "^4.4.0",
+    "prop-types": "^15.5.10",
     "react": "^15.4.1",
     "react-dom": "^15.4.1",
     "react-leaflet": "^1.0.1",
