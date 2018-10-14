@@ -26,5 +26,15 @@ const bing_key = "YOUR-BING-KEY"
 </BaseLayer>
 ```
 
+# Options
+
+option     | type   |   | default
+-----------|--------|---|--------------
+subdomains | array  |   | [0, 1, 2, 3]
+type       | string |One of the following values: <ul><li> Aerial– Aerial imagery.</li><li>AerialWithLabels –Aerial imagery with a road overlay.</li><li>AerialWithLabelsOnDemand - Aerial imagery with on-demand road overlay.</li><li>CanvasDark - A dark version of the road maps.</li><li>- CanvasLight - A lighter version of the road maps which also has some of the details such as hill shading disabled.</li><li>CanvasGray - A grayscale version of the road maps.</li><li>Road – Roads without additional imagery.</li></ul> see: https://msdn.microsoft.com/en-us/library/ff701724.aspx| 'Aerial'
+attribution | string |   | 'Bing'
+culture     | string | for supported culture codes see: https://msdn.microsoft.com/en-us/library/hh441729.aspx | ''
+style       | string | REST style parameters see: https://msdn.microsoft.com/en-us/library/mt823636.aspx#Related%20Resources | ''
+
 For more details on how to use this plugin check the example.
 
